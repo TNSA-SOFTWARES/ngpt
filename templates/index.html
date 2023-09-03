@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGpt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <h1>TNSA NGPT</h1>
+        </header>
+            <div class="message ai-message">
+            <p>Hi,How can I assist you Today</p>   
+            
+        </div>
+        <div class="chat-messages">
+            {% if response %}
+            
+            
+                        <div class="message user-message">
+                            
+                     <p>You: {{ user_input }}</p>
+                </div>
+                <div class="message ai-message">
+                    
+                    <p>NGpt: {{ response }}</p>
+                </div>
+            {% endif %}
+        </div>
+        
+        <form class="chat-input-form" action="/chat" method="POST">
+            <input type="text" name="user_input" class="chat-input" placeholder="Type your message...">
+            <button type="submit" class="send-button">➤</button>
+        </form>
+        <h5>TNSA NGpt 1.2 (Expirement)</h5>
+        <h6>NGpt may display inaccurate or offensive Text that doesn’t represent TNSA’s views.NGpt is till now only capable and Trained for generating text and calculating heavy mathematical problems.</h6>
+    </div>
+   
+</body>
+<footer>
+    <br>
+</footer>
+<style>
+    /* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply styles to the chat container */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    overflow: hidden;
+}
+
+/* Apply styles to the chat header */
+.chat-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Apply styles to chat messages */
+.chat-messages {
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.message {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+.user-message {
+    background-color: #DCF8C6;
+    align-self: flex-start;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.ai-message {
+    background-color: #E5E5EA;
+    align-self: flex-start;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+/* Apply styles to the chat input form */
+.chat-input-form {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.chat-input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+
+
+}
+
+.send-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin-left: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+
+}
+
+.send-button:hover {
+    background-color: #0056b3;
+}
+h6{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8px;
+
+}
+
+</style>
+<script>
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBoWpeV3bwlG18t5Drw5roXA0hxw_57GwA",
+  authDomain: "ngpt-tnsa.firebaseapp.com",
+  projectId: "ngpt-tnsa",
+  storageBucket: "ngpt-tnsa.appspot.com",
+  messagingSenderId: "891920011890",
+  appId: "1:891920011890:web:38f198ff87ca24256d68eb",
+  measurementId: "G-34KKY44LC4"
+};
+</script>
+
+</html>
